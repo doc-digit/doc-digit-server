@@ -1,2 +1,2 @@
-# doc-digit-server
+# server
 Server for document processing and saving
