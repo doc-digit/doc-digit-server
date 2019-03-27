@@ -7,12 +7,14 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="classification-microservice" />
+        <module name="EurekaServer" />
         <module name="rotate-microservice" />
         <module name="zespołowy" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="classification-microservice" target="1.5" />
+      <module name="EurekaServer" target="1.5" />
       <module name="rotate-microservice" target="11" />
       <module name="zespołowy" target="1.5" />
     </bytecodeTargetLevel>

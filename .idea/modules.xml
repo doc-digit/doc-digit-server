@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/EurekaServer/EurekaServer.iml" filepath="$PROJECT_DIR$/EurekaServer/EurekaServer.iml" />
       <module fileurl="file://$PROJECT_DIR$/classification-microservice/classification-microservice.iml" filepath="$PROJECT_DIR$/classification-microservice/classification-microservice.iml" />
       <module fileurl="file://$PROJECT_DIR$/rotate-microservice/rotate-microservice.iml" filepath="$PROJECT_DIR$/rotate-microservice/rotate-microservice.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/zespołowy.iml" filepath="$PROJECT_DIR$/.idea/zespołowy.iml" />

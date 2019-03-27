@@ -1,25 +1,25 @@
 package com.springbootdev.springcloud.stream.examples.consumer.Listener;
 
-import com.springbootdev.springcloud.stream.examples.consumer.Funcionality.RotateClass;
 import com.springbootdev.springcloud.stream.examples.consumer.Funcionality.RotateClassInterface;
 import com.springbootdev.springcloud.stream.examples.consumer.Model.ApiUpload;
 import com.springbootdev.springcloud.stream.examples.consumer.Model.Task;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.cloud.stream.annotation.StreamListener;
 import org.springframework.cloud.stream.messaging.Sink;
 import org.springframework.web.client.ResourceAccessException;
 import org.springframework.web.client.RestTemplate;
 
+import java.io.OutputStreamWriter;
+import java.net.MalformedURLException;
+import java.net.URL;
 import javax.imageio.ImageIO;
-import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
-import java.io.Serializable;
-import java.net.URL;
+import java.net.HttpURLConnection;
+
 
 @EnableBinding(Sink.class)
 public class rotatemicroservicelistener {
@@ -64,6 +64,9 @@ public class rotatemicroservicelistener {
             return;
         }
         logger.info("Getted upload url: [" + uploading.getUrl() + "]");
+        // Create the connection and use it to upload the new object using the pre-signed URL.
+
+        RestTemplate uploadTemlate = new RestTemplate();
 
     }
 

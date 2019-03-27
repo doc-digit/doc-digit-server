@@ -10,6 +10,7 @@
     <modules>
         <module>classification-microservice</module>
         <module>rotate-microservice</module>
+        <module>EurekaServer</module>
     </modules>
 
 </project>
