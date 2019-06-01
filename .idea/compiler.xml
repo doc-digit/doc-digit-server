@@ -13,7 +13,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="classification-microservice" target="1.5" />
+      <module name="classification-microservice" target="11" />
       <module name="EurekaServer" target="1.5" />
       <module name="rotate-microservice" target="11" />
       <module name="zespołowy" target="1.5" />
@@ -21,6 +21,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="classification-microservice" options="-parameters" />
       <module name="rotate-microservice" options="-parameters" />
     </option>
   </component>
