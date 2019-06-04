@@ -15,6 +15,15 @@ public class Task implements Serializable {
     @JsonProperty("url")
     private List<URL> urls;
 
+    @JsonProperty("category")
+    private String category;
+
+    @JsonProperty("userid")
+    private String userid;
+
+    @JsonProperty("studentid")
+    private String studentid;
+
     public UUID getUuid() {
         return uuid;
     }
@@ -27,11 +36,7 @@ public class Task implements Serializable {
         return category;
     }
 
-    @JsonProperty("category")
-    private String category;
 
-    @JsonProperty("userid")
-    private String userid;
 
     public String getUserid() {
         return userid;
@@ -41,6 +46,5 @@ public class Task implements Serializable {
         return studentid;
     }
 
-    @JsonProperty("studentid")
-    private String studentid;
+
 }
