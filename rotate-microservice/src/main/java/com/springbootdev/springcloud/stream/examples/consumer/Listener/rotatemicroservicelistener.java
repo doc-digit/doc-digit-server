@@ -21,6 +21,8 @@ import java.net.URL;
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.net.HttpURLConnection;
+import java.util.HashMap;
+import java.util.Map;
 
 
 @EnableBinding(Sink.class)
@@ -56,12 +58,17 @@ public class rotatemicroservicelistener {
 
 
         //Getting url for upload image
+
+        Map<String, String> map = new HashMap<>();
+        map.put("parent_id", task.getuuid().toString());
+        map.put("parent_type", "scan");
         RestTemplate restTemplate = new RestTemplate();
         ApiUpload uploading;
         try {
-            uploading = restTemplate.getForObject(urlForUpload, ApiUpload.class);
+            uploading = restTemplate.postForObject(urlForUpload, map, ApiUpload.class);
         } catch (ResourceAccessException e) {
             logger.error("No connection to api");
+            logger.trace("No", e);
             return;
         }
         if (uploading == null) {
@@ -74,11 +81,8 @@ public class rotatemicroservicelistener {
 
             URL url = uploading.getUrl();
             HttpURLConnection c = (HttpURLConnection) url.openConnection();
-            c.setDoInput(true);
             c.setRequestMethod("PUT");
             c.setDoOutput(true);
-            c.setRequestProperty("Content-Type", "image/png");
-            c.connect();
             OutputStream output = c.getOutputStream();
             ImageIO.write(rotatedImage, "PNG", output);
             output.close();

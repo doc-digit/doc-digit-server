@@ -15,11 +15,11 @@ public class DocumentModel {
     private Long Id;
     @Column(name = "created_date")
     private LocalDateTime date;
-    @Column(name = "document_category")
+    @Column(name = "document_type")
     private String documentCategory;
-    @Column(name = "studentid")
+    @Column(name = "student")
     private String studentId;
-    @Column(name = "userid")
+    @Column(name = "userID")
     private String userid;
 
     public DocumentModel() {

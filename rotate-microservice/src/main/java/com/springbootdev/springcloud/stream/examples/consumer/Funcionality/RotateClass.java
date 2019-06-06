@@ -17,6 +17,7 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
 import javax.imageio.ImageIO;
+import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -36,8 +37,9 @@ public class RotateClass implements RotateClassInterface {
     private static final Logger logger = LoggerFactory.getLogger(rotatemicroservicelistener.class);
 
 
+    @Value("${language}")
     private String language = "eng";
-    @Value("src/main/resources/tessdata")
+    @Value("${datapath}")
     private String datapath;
     @Value("${angle}")
     private double MINIMUM_DESKEW_THRESHOLD;
@@ -76,7 +78,9 @@ public class RotateClass implements RotateClassInterface {
         TessAPI1.TessBaseAPISetPageSegMode(handle, TessAPI1.TessPageSegMode.PSM_AUTO);
         TessAPI1.TessBaseAPISetImage(handle, buf, image.getWidth(), image.getHeight(), bytespp, bytespl);
 
+
         TessAPI1.TessPageIterator pi = TessAPI1.TessBaseAPIAnalyseLayout(handle);
+
 
         if (pi == null) {
             return image;
@@ -84,7 +88,7 @@ public class RotateClass implements RotateClassInterface {
         TessAPI1.TessPageIteratorOrientation(pi, orientation, direction, order, deskew_angle);
 
         int orient = orientation.get();
-
+        logger.info("Orientation: " + orient);
         if (orient == 1) {
             ImageHelper.rotateImage(image, 90);
         } else if (orient == 2) {
