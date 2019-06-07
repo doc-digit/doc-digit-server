@@ -14,7 +14,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="classification-microservice" target="11" />
-      <module name="EurekaServer" target="5" />
+      <module name="EurekaServer" target="1.5" />
       <module name="rotate-microservice" target="11" />
       <module name="zespołowy" target="1.5" />
     </bytecodeTargetLevel>

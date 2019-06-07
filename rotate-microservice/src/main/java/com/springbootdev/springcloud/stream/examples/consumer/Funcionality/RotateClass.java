@@ -102,7 +102,6 @@ public class RotateClass implements RotateClassInterface {
 
     @Override
     public BufferedImage rotateImage(BufferedImage image) {
-        logger.info("Rotating " + datapath);
 
         BufferedImage newimage = rotating(image);
 
